@@ -15,9 +15,4 @@ public class Guesser implements Respondent{
         int answer = rnd.nextInt(max+1);
         return answer;
     }
-
-    @Override
-    public String toString() {
-        return "Guesser";
-    }
 }

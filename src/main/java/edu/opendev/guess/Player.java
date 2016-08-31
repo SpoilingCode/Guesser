@@ -12,9 +12,4 @@ public class Player implements Respondent{
         //answer = Integer.parseInt(JOptionPane.showInputDialog(null, "Ваш ответ: "));
         return answer;
     }
-
-    @Override
-    public String toString() {
-        return "Player";
-    }
 }
