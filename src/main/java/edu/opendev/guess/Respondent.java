@@ -1,4 +1,5 @@
 package edu.opendev.guess;
 
-public class Respondent {
+public interface Respondent {
+    int nextAnswer();
 }

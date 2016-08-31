@@ -15,9 +15,6 @@ public class GameGuess {
         this.value = rnd.nextInt(max) + 1;
     }
 
-    /**
-     * Start game
-     */
     public void start() {
         System.out.printf("Я загадал число от 1 до %d, отгадайте его%n", max);
         int answer;
