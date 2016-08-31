@@ -19,8 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="GameGuess_main" target="1.5" />
-      <module name="GameGuess_test" target="1.5" />
+      <module name="GameGuess_main" target="1.6" />
+      <module name="GameGuess_test" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
