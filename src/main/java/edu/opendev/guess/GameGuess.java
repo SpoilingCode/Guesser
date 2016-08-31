@@ -6,7 +6,12 @@ public class GameGuess {
 
     private int max;
     private int value;
+    private int countAttempts = 0;
     private Respondent respondent;
+
+    public int getCountAttempts() {
+        return countAttempts;
+    }
 
     public GameGuess(int max, Respondent respondent) {
         this.max = max;
@@ -20,6 +25,7 @@ public class GameGuess {
         int answer;
         do {
             answer = respondent.nextAnswer();
+            countAttempts++;
         } while (!checkAnswer(answer));
     }
 
