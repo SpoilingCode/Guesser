@@ -1,7 +1,6 @@
 package edu.opendev.guess;
 
 import java.util.Random;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
 public class GameGuess {
@@ -10,6 +9,7 @@ public class GameGuess {
     private int value;
     private int countAttempts;
     private Respondent respondent;
+    private String message;
 
     public long getDuration(long startTime){
         long duration = System.nanoTime() - startTime;
@@ -31,6 +31,10 @@ public class GameGuess {
         this.value = rnd.nextInt(max) + 1;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
     public void start() {
         countAttempts = 0;
         System.out.printf("Я загадал число от 1 до %d, отгадайте его%n", max);
@@ -38,6 +42,7 @@ public class GameGuess {
         do {
             answer = respondent.nextAnswer();
             countAttempts++;
+
         } while (!checkAnswer(answer));
     }
 
@@ -47,13 +52,13 @@ public class GameGuess {
 
     private boolean checkAnswer(int answer, boolean quiet) {
         boolean result = false;
-        String message;
+
         if(answer > value) {
             message = "много";
         } else if(answer < value) {
             message = "мало";
         } else {
-            message = "победа, Вы угадали";
+            message = "Победа, Вы угадали!";
             result = true;
         }
         if(!quiet) {
